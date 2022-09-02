@@ -1,7 +1,4 @@
 """IG: few.pz"""
-import math
- 
- 
 def main():
     """Main function"""
     val_a = float(input())
@@ -9,7 +6,7 @@ def main():
     val_c = float(input())
     val_d = float(input())
  
-    print(math.sqrt(((val_a-val_c)**2)+((val_b-val_d)**2)))
+    print((((val_a-val_c)**2)+((val_b-val_d)**2))**0.5)
  
  
 main()

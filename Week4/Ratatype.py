@@ -1,6 +1,4 @@
 """IG: few.pz"""
- 
- 
 def print_here(x_val):
     """Get string of text in value"""
     if x_val == 1:
@@ -16,11 +14,9 @@ organization, displaying, analysis, interpretation and presentation of data."
         return 'The backslash (\\) is a typographical mark used mainly in computing \
 and is the mirror image of the common slash (/). It is sometimes called "escape character".'
  
- 
 def main():
     """Main function"""
     x_val = int(input())
     print(print_here(x_val))
- 
  
 main()

@@ -1,6 +1,4 @@
 """IG: few.pz"""
- 
- 
 def main():
     """Main function"""
     x_val = float(input())
@@ -9,6 +7,5 @@ def main():
     else:
         print("Fail")
     print("Process is terminated")
- 
  
 main()
