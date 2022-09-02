@@ -5,20 +5,20 @@ def main():
     amount = int(input())
     free = int(input())
     want = int(input())
-    donut = 0
 
-    promotion = amount+free
-    in_want = want // promotion
+    in_want = want // (amount + free)
     if want == 0:
         print("0 0")
-    if want > 0:
-        donut = in_want*promotion
+    elif want > 0:
+        donut = in_want*(amount + free)
         total_left = want - donut
         if total_left > amount:
             total_left = amount
         if total_left >= amount:
-            donut += promotion
+            donut = donut + (amount + free)
         else:
-            donut += total_left
-        print("%d %d" % ((price*in_want*amount)+(total_left*price), donut))
+            donut = donut + total_left
+        
+        total_price = (price*in_want*amount) + (total_left*price);
+        print("%d %d" % (total_price, donut))
 main()

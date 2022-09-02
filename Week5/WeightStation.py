@@ -5,7 +5,7 @@ def main():
     val_a = float(input())
     val_b = float(input())
     val_c = float(input())
-    val_d = (average * 4) - (val_a+val_b+val_c)
+    val_d = (average * 4) - (val_a + val_b + val_c)
     less = average-(average/2)
     more = average + (average/2)
     if average * 4 > 15000:
