@@ -3,17 +3,20 @@ def main():
     """Main function"""
     order = input()
 
-    value = [float(input()), float(input()), float(input())]
-    if value[0] > value[1]:
-        value[1], value[0] = value[0], value[1]
-    if value[1] > value[2]:
-        value[1], value[2] = value[2], value[1]
-    if value[0] > value[1]:
-        value[1], value[0] = value[0], value[1]
+    num1 = float(input())
+    num2 = float(input())
+    num3 = float(input())
+
+    if num1 > num2:
+        num1, num2 = num2, num1
+    if num2 > num3:
+        num2, num3 = num3, num2
+    if num1 > num2:
+        num1, num2 = num2, num1
 
     if order.lower() == "ascend":
-        print("%.2f, %.2f, %.2f " %(value[0], value[1], value[2]))
+        print("%.2f, %.2f, %.2f " %(num1, num2, num3))
     elif order.lower() == "descend":
-        print("%.2f, %.2f, %.2f " %(value[2], value[1], value[0]))
+        print("%.2f, %.2f, %.2f " %(num3, num2, num1))
 
 main()
