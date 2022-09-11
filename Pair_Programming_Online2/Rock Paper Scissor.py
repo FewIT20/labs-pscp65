@@ -1,6 +1,6 @@
 """IG: few.pz"""
-def gameplay(value, a_point, b_point):
-    """"Gameplay function"""
+def game_play(value, a_point, b_point):
+    """"Game_play function"""
     if value[:1] == 'R':
         if value[1:] == 'P':
             b_point += 1
@@ -37,7 +37,7 @@ def main():
         else:
             x_val += z_val
     for count in range(len(y_val)):
-        player_a_point, player_b_point = gameplay(y_val[count], player_a_point, player_b_point)
+        player_a_point, player_b_point = game_play(y_val[count], player_a_point, player_b_point)
     if player_a_point == player_b_point:
         print("DRAW %d" %(player_a_point))
     elif player_a_point > player_b_point:
