@@ -13,8 +13,9 @@ def main():
         while True:
             more = (cap // b_val) * c_val
             milk += more
+            mod = (cap % b_val)
             cap = 0
-            cap += (cap % b_val)
+            cap += mod
             cap += more
             more = 0
             if cap < b_val:
