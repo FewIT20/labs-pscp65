@@ -1,6 +1,26 @@
 """IG: few.pz"""
-def check_time_ms(text, status):
-    """Main Function"""
+def output_value(time1, time2, time3, time4, value):
+    """Output value"""
+    if time1[1:] == "":
+        value1 = value
+    else:
+        value1 = time1[1:]
+    if time2[1:] == "":
+        value2 = value
+    else:
+        value2 = time2[1:]
+    if time3[1:] == "":
+        value3 = value
+    else:
+        value3 = time3[1:]
+    if time4[1:] == "":
+        value4 = value
+    else:
+        value4 = time4[1:]
+    return int(value1), int(value2), int(value3), int(value4)
+
+def get_time_millisecond(text, status):
+    """Check time millisecond"""
     if text.count('out.') >= 1 or text.count('fail') >= 1:
         return 1
     else:
@@ -11,38 +31,42 @@ def check_time_ms(text, status):
 
 def main():
     """Main Function"""
-    a_val, b_val, c_val, d_val, e_val, f_val, j_val, ip_address = input(), input(), \
-input(), input(), input(), input(), input(), ''
+    input()
+    input()
+    # ^^ input() unused less than 2 times
+    line1 = input()
+    line2 = input()
+    line3 = input()
+    line4 = input()
+    line5 = input()
+    ip_address = ""
 
-    #ไม่ได้เอาไปใช้งั้นตกแต่งให้สวยงาม
-    a_val.count("真そばに　いて欲しい")
-    b_val.count("あなたと一緒じゃなきゃだめなんだ")
-
-    if c_val.count("[") <= 0:
-        ip_address = c_val[c_val.find("Pinging ") + 8:c_val.find(" with")]
+    if line1.count("[") <= 0:
+        ip_address = line1[line1.find("Pinging ") + 8 : line1.find(" with")]
     else:
-        ip_address = c_val[c_val.find("[") + 1:c_val.find("]")]
-    mil_time = check_time_ms(d_val, 1) + check_time_ms(e_val, 1) +\
-         check_time_ms(f_val, 1) + check_time_ms(j_val, 1)
+        ip_address = line1[line1.find("[") + 1 : line1.find("]")]
+    millisecond = get_time_millisecond(line2, 1) + get_time_millisecond(line3, 1) \
+        + get_time_millisecond(line4, 1) + get_time_millisecond(line5, 1)
     print('Ping statistics for %s:' %(ip_address))
-    print('    Packets: Sent = 4, Received = %d, Lost = %d (%s loss),' \
-%(abs(int(mil_time) - 4), int(mil_time), str(int(mil_time) * 25) + "%"))
-    if mil_time < 4:
-        time1, time2, time3, time4 = str(check_time_ms(d_val, 2)), \
-str(check_time_ms(e_val, 2)), str(check_time_ms(f_val, 2)), str(check_time_ms(j_val, 2))
+    print('    Packets: Sent = 4, Received = %d, Lost = %d (%s loss),' % \
+        (abs(int(millisecond) - 4), int(millisecond), str(int(millisecond) * 25) + "%"))
+    if millisecond < 4:
+        time3 = str(get_time_millisecond(line4, 2))
+        time4 = str(get_time_millisecond(line5, 2))
         print('Approximate round trip times in milli-seconds:')
-        if str(time1).count("<") >= 1 or str(time2).count("<") or str(time3).count("<")\
- or str(time4).count("<"):
+        if str(get_time_millisecond(line2, 2)).count("<") >= 1 or \
+            str(get_time_millisecond(line3, 2)).count("<") or time3.count("<") or time4.count("<"):
             print('    Minimum = 0ms, Maximum = 0ms, Average = 0ms')
         else:
-            maximum = max(int(-1 if time1[1:] == "" else time1[1:]), int(-1 if time2[1:] == "" \
-else time2[1:]), int(-1 if time3[1:] == "" else time3[1:]), int(-1 if time4[1:] == "" else \
-time4[1:]))
-            minimum = min(int(1000000 if time1[1:] == "" else time1[1:]), int(1000000 \
-if time2[1:] == "" else time2[1:]), int(1000000 if time3[1:] == "" else time3[1:]), \
-int(1000000 if time4[1:] == "" else time4[1:]))
-            print('    Minimum = %dms, Maximum = %dms, Average = %dms' %(minimum, maximum,\
- (int(0 if time1[1:] == "" else time1[1:]) + int(0 if time2[1:] == "" \
-else time2[1:]) + int(0 if time3[1:] == "" else time3[1:]) + int(0 if time4[1:] == "" \
-else time4[1:])) / (abs(mil_time - 4))))
+            value1, value2, value3, value4 = output_value(str(get_time_millisecond(line2, 2)), \
+                str(get_time_millisecond(line3, 2)), time3, time4, -1)
+            maximum = max(value1, value2, value3, value4)
+            value1, value2, value3, value4 = output_value(str(get_time_millisecond(line2, 2)), \
+                str(get_time_millisecond(line3, 2)), time3, time4, 1000000)
+            minimum = min(value1, value2, value3, value4)
+            value1, value2, value3, value4 = output_value(str(get_time_millisecond(line2, 2)), \
+                str(get_time_millisecond(line3, 2)), time3, time4, 0)
+            print('    Minimum = %dms, Maximum = %dms, Average = %dms' %\
+                (minimum, maximum, int((int(value1) + int(value2) + int(value3) + int(value4)) \
+                    / (abs(millisecond - 4)))))
 main()
