@@ -3,5 +3,6 @@
         "icecream",
         "kaprekar",
         "pringle"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }
