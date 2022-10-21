@@ -1,14 +1,18 @@
 """IG: few.pz"""
-def _fibonacci(fib_max_number):
-    """Calculate  function"""
-    x, y = 0, 1
-    while x < fib_max_number:
-        yield x
-        x, y = y, x + y
+def fibonacci(number):
+    """ Return fibonacci values for given number """
+    data = {0:0, 1:1}
+    if number in data:
+        return data[number]
+    if number > 500:
+        fibonacci(number - 500)
+    res = fibonacci(number-2) + fibonacci(number-1, data)
+    data[number] = res
+    return res
 
 def main():
     """ Main function """
-    fib_max_number = int(input())
-    fib_list = [n for n in _fibonacci(999999999999999999999999999999999999)]
-    print(fib_list[fib_max_number])
+    number = int(input())
+    result = fibonacci(number)
+    print(result)
 main()
