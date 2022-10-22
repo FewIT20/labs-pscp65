@@ -6,7 +6,7 @@ def fibonacci(number):
         return data[number]
     if number > 500:
         fibonacci(number - 500)
-    res = fibonacci(number-2) + fibonacci(number-1, data)
+    res = fibonacci(number-2) + fibonacci(number-1)
     data[number] = res
     return res
 
