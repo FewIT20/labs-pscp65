@@ -16,7 +16,7 @@ def main():
     blst = addlistbyfewza(num2, num3, [])
     for i in alst:
         for j in range(len(blst[0])):
-            sumbyfew, countfew = 0, 0
+            sumbyfew, countfew = 0, 0;
             for k in i:
                 sumbyfew += k * int(blst[countfew][j])
                 countfew += 1
