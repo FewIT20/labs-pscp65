@@ -74,7 +74,6 @@ def bowling():
             frame = ""
     print()
     score_lst[9] = score_lst[9]+score_lst[10] if len(score_lst) == 11 else score_lst[9]
-    print(score_lst[:10])
     main(score_lst[:10])
 
 
