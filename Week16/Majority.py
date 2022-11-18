@@ -5,11 +5,11 @@ def main():
     for _ in range(vote):
         each_vote = int(input())
         list_score.append(each_vote)
-        if list_score.count(each_vote) > most_fre:
-            most_fre = list_score.count(each_vote)
+        if list_score.count(each_vote) > most_free:
+            most_free = list_score.count(each_vote)
             most_vote = each_vote
-    if most_fre > (vote/2):
-        print(most_vote, most_fre)
+    if most_free > (vote/2):
+        print(most_vote, most_free)
     else:
-        print('0', most_fre)
+        print('0', most_free)
 main()
