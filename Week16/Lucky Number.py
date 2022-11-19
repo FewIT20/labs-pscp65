@@ -1,15 +1,14 @@
 """IG: few.pz"""
 
 
-def main():
+def main(number):
     """ Main function """
-    n = int(input())
-    List = range(-1, n*n+9, 2)
+    number1 = range(-1, number+1, 2)
     i = 2
-    while List[i:]:
-        List = sorted(set(List)-set(List[List[i]::List[i]]))
+    while number1[i:]:
+        number1 = sorted(set(number1) - set(number1[number1[i]::number1[i]]))
         i += 1
-    print(List[1:n+1])
+    print(*(number1[1:number+1]), sep=(' '))
 
 
-main()
+main(int(input()))
