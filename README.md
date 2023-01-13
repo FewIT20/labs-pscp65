@@ -1,2 +1,13 @@
-# 6f106b07-6ac1-4ad2-b2ed-bf6251ea5862
-6f106b07-6ac1-4ad2-b2ed-bf6251ea5862
+# PSCP - Python
+This repository consists of codes of "Problem Solving and Computer Programming (PSCP)" subject, School of Information Techonology, King Mongkut's Institute of Technology Ladkrabang (KMITL).
+
+
+_____
+
+<b>Note:</b>
+<ol>
+  <li>Only for <b>Viewing</b> and <b>Studying</b>.</li>
+  <li>Please <b>DO NOT</b> copy.</li>
+</ol>
+
+_____
